@@ -13,6 +13,7 @@ import {
   AssetType,
 } from "./types";
 import AaveMarket from "../markets/pegasys";
+import PegasysTestMarket from "../markets/pegasys-test";
 import AaveTestMarket from "../markets/test";
 import { AaveProtocolDataProvider } from "../typechain";
 import {
@@ -33,6 +34,7 @@ declare var hre: HardhatRuntimeEnvironment;
 export enum ConfigNames {
   Commons = "Commons",
   Aave = "Pegasys",
+  PegasysTest = "PegasysTest",
   Test = "Test"
 }
 
@@ -82,6 +84,8 @@ export const loadPoolConfig = (configName: ConfigNames): PoolConfiguration => {
   switch (configName) {
     case ConfigNames.Aave:
       return AaveMarket;
+    case ConfigNames.PegasysTest:
+      return PegasysTestMarket;
     case ConfigNames.Test:
       return AaveTestMarket;
     default:

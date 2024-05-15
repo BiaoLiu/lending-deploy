@@ -51,13 +51,22 @@ export const MOCK_CHAINLINK_AGGREGATORS_PRICES: { [key: string]: string } = {
   BTC: parseUnits("72000", 8).toString(),
   WSYS: parseUnits("0.25", 8).toString(),
   SYS: parseUnits("0.25", 8).toString(),
+
+  RBTC: parseUnits("60000", 8).toString(),
+  RUSDC: parseUnits("1", 8).toString(),
+  RUSDT: parseUnits("1", 8).toString(),
+  RWETH: parseUnits("4000", 8).toString(),
+  WTSYS: parseUnits("0.065", 8).toString(),
+  RPSYS: parseUnits("0.065", 8).toString(),
 };
 
 export const chainlinkAggregatorProxy: Record<string, string> = {
+  tanenbaum: "0x42cF8Fd3A114E3ed807379c6E4e6E7f9A30AC561",
   rollux: "0x93fFce52f5776ad8465669b5C52548b92ed6678F",
 };
 
 export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
+  tanenbaum: "0x42cF8Fd3A114E3ed807379c6E4e6E7f9A30AC561",
   rollux: "0x93fFce52f5776ad8465669b5C52548b92ed6678F",
 };
 
@@ -68,10 +77,12 @@ export const EMPTY_STORAGE_SLOT =
   "0x0000000000000000000000000000000000000000000000000000000000000000";
 
 export const POOL_ADMIN: Record<string, string> = {
+  [eEthereumNetwork.tanenbaum]: ETHEREUM_SHORT_EXECUTOR,
   [eEthereumNetwork.rollux]: ETHEREUM_SHORT_EXECUTOR,
 };
 
 export const EMERGENCY_ADMIN: Record<string, string> = {
+  [eEthereumNetwork.tanenbaum]: ETHEREUM_SHORT_EXECUTOR,
   [eEthereumNetwork.rollux]: ETHEREUM_SHORT_EXECUTOR,
 };
 
